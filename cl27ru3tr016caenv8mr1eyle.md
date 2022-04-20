@@ -451,7 +451,7 @@ class UserTransactionManagerJob implements ShouldQueue
             DB::beginTransaction();
 
             $this->sender->transactions()->create([
-                'amount' => -1 * $this->amount,
+                'amount' => 1 * $this->amount,
                 'description' => "You sent {$this->amount} to {$this->reciever->name}"
             ]);
 
